@@ -1,7 +1,12 @@
 export * from './Spinner'
+export * from './Table'
+export * from './Pagination'
 
 export * from './IconProfile'
 export * from './IconHome'
 export * from './IconCustomers'
 export * from './IconSliderbarLeft'
 export * from './IconSliderbarRight'
+export * from './IconEdit'
+export * from './IconChevronLeft'
+export * from './IconChevronRight'

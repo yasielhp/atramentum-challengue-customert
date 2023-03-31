@@ -23,7 +23,7 @@ export function Layout ({ children }) {
 
   return (
     <>
-      <header className='w-screen py-2 pl-2 pr-4 bg-white flex justify-between border-b'>
+      <header className='w-full py-2 pl-2 pr-4 bg-white flex justify-between border-b fixed z-30'>
         <div className='flex justify-center items-center'>
           <div className='mr-3'>
             {
@@ -34,11 +34,11 @@ export function Layout ({ children }) {
           </div>
           <Link to='/' className='flex items-center text-xl font-semibold'>
             <img className='w-8 h-8 mr-2' src='/logo.svg' alt='logo' />
-            Atramentum
+            <h1>Atramentum</h1>
           </Link>
         </div>
         <div className='flex justify-center items-center'>
-          <button ref={menuRef} className='flex justify-center items-center' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className='flex justify-center items-center' onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <div className='text-gray-900 w-10 inline-flex relative'>
               <IconProfile />
               <span className='flex absolute h-3 w-3 bottom-0 right-2 -mt-1 -mr-1'>
@@ -48,21 +48,24 @@ export function Layout ({ children }) {
             </div>
           </button>
           {
-            isMenuOpen && (
-              <div className='absolute bottom-auto right-0 w-auto bg-white rounded-lg shadow'>
-                <div className='p-3 border-b'>
-                  <p className='text-sm text-left font-semibold'>{user.username}</p>
+            isMenuOpen &&
+            (
+              <div ref={menuRef} className='relative'>
+                <div className='absolute top-auto mt-5 -right-4 w-auto bg-white rounded-lg shadow'>
+                  <div className='p-3 border-b w-32'>
+                    <p className='text-sm text-left font-semibold'>{user.username}</p>
+                  </div>
+                  <button onClick={logout} className='px-4 py-2 text-sm text-left hover:bg-gray-200 mb-2 w-full'>Sign out</button>
                 </div>
-                <button onClick={logout} className='px-4 py-2 text-sm text-left hover:bg-gray-200 mb-2 w-full'>Sign out</button>
               </div>
             )
           }
         </div>
 
       </header>
-      <main className='flex'>
+      <main className='flex pt-11 w-full'>
         <aside
-          className='sticky h-screen flex flex-col justify-between bg-white border-r transition-all'
+          className=' bg-white flex flex-col flex-shrink-0 fixed border-r h-screen pt-6 overflow-y-hidden s'
           ref={sidebarRef}
           onMouseEnter={() => setIsSidebarOpen(true)}
           onMouseLeave={() => setIsSidebarOpen(false)}
@@ -74,7 +77,7 @@ export function Layout ({ children }) {
             </ul>
           </nav>
         </aside>
-        <section>{children}</section>
+        <article className={`mt-3 w-full overflow-y-auto ${isSidebarOpen ? 'ml-[152px]' : 'ml-[57px]'}`}>{children}</article>
       </main>
     </>
   )

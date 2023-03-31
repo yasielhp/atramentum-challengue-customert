@@ -16,3 +16,16 @@ export const authenticate = async (username, password) => {
   window.localStorage.setItem('user', JSON.stringify(user))
   return { token, user }
 }
+
+export const getCustomers = async (pageNumber, pageSize, historic, sortBy) => {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}customers?pageNumber=${pageNumber}&pageSize=${pageSize}&historic=${historic}&sortBy=${sortBy}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      accept: 'application/json',
+      Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
+    }
+  })
+  const data = await response.json()
+  return data
+}
