@@ -2,8 +2,9 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/auth'
 import { authenticate } from '../../services/api'
 import { Spinner } from '../../components'
+import { Link } from 'react-router-dom'
 
-export function Login () {
+export function LoginPage () {
   const { login } = useContext(AuthContext)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -13,9 +14,10 @@ export function Login () {
   })
 
   const handleOnChange = (e) => {
+    const { name, value } = e.target
     setForm({
       ...form,
-      [e.target.name]: e.target.value
+      [name]: value
     })
   }
 
@@ -26,19 +28,19 @@ export function Login () {
       const { token, user } = await authenticate(form.user, form.password)
       login(token, user)
       setError(null)
-      setLoading(false)
     } catch (error) {
       setError('Login failed, please check your credentials.')
-      setLoading(false)
     }
+    setLoading(false)
   }
+
   return (
     <section className='flex flex-col items-center justify-center min-h-screen py-12sm:px-6 lg:px-8'>
       <div className='flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
-        <a href='#' className='flex items-center mb-6 text-2xl font-semibold'>
+        <Link to='/' className='flex items-center mb-6 text-2xl font-semibold'>
           <img className='w-8 h-8 mr-2' src='/logo.svg' alt='logo' />
           Atramentum
-        </a>
+        </Link>
         <div className='w-96 bg-white rounded-lg shadow md:mt-0 xl:p-0'>
           <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
             <form className='space-y-4 md:space-y-6' onSubmit={handleOnSubmit}>

@@ -1,9 +1,10 @@
 import { useContext } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { Spinner } from '../components'
 import { AuthContext } from '../context/auth'
-import { Dashboard } from '../dashboard/route/'
-import { Auth } from '../auth/route/'
+import { Spinner } from '../components'
+
+import Dashboard from '../dashboard/route/'
+import Auth from '../auth/route/'
 
 export const AppRouter = () => {
   const { isLogin, loading } = useContext(AuthContext)
