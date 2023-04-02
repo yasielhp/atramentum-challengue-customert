@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { AuthContext } from '../../context/auth'
+import { AuthContext } from '../../context/Auth'
 import { authenticate } from '../../services/api'
 import { Spinner } from '../../components'
 import { Link } from 'react-router-dom'

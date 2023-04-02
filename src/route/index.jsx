@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { AuthContext } from '../context/auth'
+import { AuthContext } from '../context/Auth'
 import { Spinner } from '../components'
 
 import Dashboard from '../dashboard/route/'

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { IconProfile, IconCustomers, IconSliderbarRight, IconSliderbarLeft } from '../../components'
-import { AuthContext } from '../../context/auth'
+import { AuthContext } from '../../context/Auth'
 export function Layout ({ children }) {
   const { user, logout } = useContext(AuthContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
