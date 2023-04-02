@@ -1,6 +1,11 @@
 {
   "name": "atramentum-challengue-customert",
-  "private": true,
+  "author": {
+    "name": "Yasiel Hernández Portal",
+    "email": "yasielhp@gmail.com"
+  },
+  "license": "MIT",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,12 +14,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
-    "@types/react": "18.0.31",
+    "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
     "@vitejs/plugin-react-swc": "3.2.0",
     "autoprefixer": "10.4.14",
