@@ -10,3 +10,11 @@ export const customerColumns = [
   { id: 'observations', name: 'Observations', width: 200, sortable: true, filterable: true },
   { id: 'activated', name: 'Activated', width: 200, sortable: true, filterable: true }
 ]
+
+export const banksColumns = [
+  { id: 'id', name: 'ID', width: 50, sortable: true, filterable: true },
+  { id: 'createdDate', name: 'Created Date', width: 200, sortable: true, filterable: true },
+  { id: 'iban', name: 'IBAN', width: 200, sortable: true, filterable: true },
+  { id: 'lastModifiedDate', name: 'Last Modified Date', width: 200, sortable: true, filterable: true },
+  { id: 'order', name: 'Order', width: 200, sortable: true, filterable: true }
+]

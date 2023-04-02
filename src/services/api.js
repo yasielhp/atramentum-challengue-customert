@@ -21,10 +21,59 @@ export const getCustomers = async (pageNumber, pageSize, historic, sortBy) => {
   const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}customers?pageNumber=${pageNumber}&pageSize=${pageSize}&historic=${historic}&sortBy=${sortBy}`, {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
       accept: 'application/json',
       Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
     }
+  })
+  const data = await response.json()
+  return data
+}
+
+export const getCustomer = async (customerId) => {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}customers/${customerId}`, {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
+    }
+  })
+  const data = await response.json()
+  return data
+}
+
+export const getBankAcounts = async (customerId, pageNumber, pageSize, historic, sortBy) => {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}customers/${customerId}/bankAccounts?pageNumber=${pageNumber}&pageSize=${pageSize}&historic=${historic}&sortBy=${sortBy}`, {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
+    }
+  })
+  const data = await response.json()
+  return data
+}
+
+export const getBankAccountId = async (bankAccountId) => {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}customers/bankAccounts/${bankAccountId}`, {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
+    }
+  })
+  const data = await response.json()
+  return data
+}
+
+export const updateBankAccountId = async (bankAccountId, bankAccount) => {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}customers/bankAccounts/${bankAccountId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      accept: 'application/json',
+      Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
+    },
+    body: JSON.stringify(bankAccount)
   })
   const data = await response.json()
   return data

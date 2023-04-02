@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { IconProfile, IconHome, IconCustomers, IconSliderbarRight, IconSliderbarLeft } from '../../components'
+import { IconProfile, IconCustomers, IconSliderbarRight, IconSliderbarLeft } from '../../components'
 import { AuthContext } from '../../context/auth'
 export function Layout ({ children }) {
   const { user, logout } = useContext(AuthContext)
@@ -72,7 +72,6 @@ export function Layout ({ children }) {
         >
           <nav className='w-full'>
             <ul className='px-2 pt-4'>
-              <li><Link className='flex w-full justify-start items-center p-2 gap-x-2 text-gray-500 bg-white hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all' to='/'><IconHome />{isSidebarOpen && <span>Home</span>}</Link></li>
               <li><Link className='flex w-full justify-start items-center p-2 gap-x-2 text-gray-500 bg-white hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all' to='/customers'><IconCustomers />{isSidebarOpen && <span>Customers</span>}</Link></li>
             </ul>
           </nav>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { Layout } from '../layout'
-import { Pagination, Spinner, Table } from '../../components/'
+import { IconEye, Pagination, Spinner, Table } from '../../components/'
 
 import { getCustomers } from '../../services/api'
 import { customerColumns } from '../../utils/data'
@@ -11,8 +11,6 @@ export function CustomersPage () {
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(0)
   const [pageSize] = useState(5)
-
-  console.log(customers)
 
   useEffect(() => {
     setLoading(true)
@@ -41,7 +39,13 @@ export function CustomersPage () {
             )
           : (
             <>
-              <Table rows={customers.content} columns={customerColumns} />
+              <Table
+                iconText={<IconEye />}
+                buttonText='View'
+                url='customers'
+                rows={customers.content}
+                columns={customerColumns}
+              />
               <Pagination
                 page={page}
                 pageSize={pageSize}
