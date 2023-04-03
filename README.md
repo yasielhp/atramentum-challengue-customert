@@ -1,6 +1,19 @@
 # Dashboard App
+
 ## Description
 Dashboard App is a web application developed for an Atramentum challenge. The application displays a list of clients that is assigned by email upon obtaining the username and password. By clicking on a client from the list, you can access a client editing page where you can edit client-related data such as bank accounts.
+
+
+## Demo
+Link: [yasielhp-atramentum-challengue-custom.netlify.app](https://yasielhp-atramentum-challengue-custom.netlify.app/)
+
+![Example -1](/public/README/example-2.jpg)
+<div>
+<img src="/public/README/example-1.jpg" alt="Texto alternativo" width="260" height="150">
+
+<img src="/public/README/example-3.jpg" alt="Texto alternativo" width="260" height="150">
+<img src="/public/README/example-4.jpg" alt="Texto alternativo" width="260" height="150">
+</div>
 
 ## Technologies Used
 - JavaScript
