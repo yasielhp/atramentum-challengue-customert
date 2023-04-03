@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/Auth'
 import { authenticate } from '../../services/api'
-import { Spinner, Input } from '../../components'
+import { Spinner, Input, Button } from '../../components'
 import { Link } from 'react-router-dom'
 
 export function LoginPage () {
@@ -65,7 +65,11 @@ export function LoginPage () {
               <div className='flex items-center justify-center'>
                 {error && <small className='text-red-500 text-sm text-center'>{error}</small>}
               </div>
-              <button disabled={loading} type='submit' className='w-full h-12 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center'>{loading ? <div className='w-full flex justify-center items-center'><Spinner /></div> : 'Sign in'}</button>
+              <Button
+                type='submit'
+                disabled={loading}
+                label={loading ? <div className='w-full flex justify-center items-center'><Spinner /></div> : 'Sign in'}
+              />
             </form>
           </div>
         </div>

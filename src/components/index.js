@@ -3,6 +3,7 @@ export * from './Table'
 export * from './Pagination'
 export * from './Modal'
 export * from './Input'
+export * from './Button'
 
 export * from './IconProfile'
 export * from './IconCustomers'

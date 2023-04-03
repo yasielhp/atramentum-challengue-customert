@@ -1,3 +1,5 @@
+import { Button } from './Button'
+
 export const Modal = ({ children, title, onClose, onConfirm }) => {
   return (
     <div className='fixed z-40 inset-0 overflow-y-auto'>
@@ -29,21 +31,18 @@ export const Modal = ({ children, title, onClose, onConfirm }) => {
               {children}
             </form>
           </div>
-          <div className='bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse'>
-            <button
+          <div className='bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse gap-x-2'>
+            <Button
               type='submit'
               onClick={onConfirm}
-              className='mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
-            >
-              Update
-            </button>
-            <button
+              label='Update'
+            />
+            <Button
+              color='gray'
               type='button'
-              className='mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
               onClick={onClose}
-            >
-              Cancel
-            </button>
+              label='Cancel'
+            />
           </div>
         </div>
       </div>

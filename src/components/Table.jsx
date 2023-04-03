@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import { formatDate, formatIBAN } from '../utils'
+import { Button } from './Button'
 
 export const Table = ({ rows, columns, url, buttonText, iconText, onClick }) => {
   return (
@@ -50,18 +50,23 @@ export const Table = ({ rows, columns, url, buttonText, iconText, onClick }) => 
                   )
                 }
               })}
-              <td className='p-4 text-sm text-gray-900 text-right'>
+              <td className='p-4 text-sm text-gray-900 text-right flex justify-end items-center'>
                 {
                   url
                     ? (
-                      <Link to={`/${url}/${row.id}`} className='inline-flex items-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:bg-blue-800 font-medium rounded-lg text-sm px-3 py-2 text-center'>{iconText}<span className='ml-2 whitespace-nowrap'>{buttonText}</span></Link>
+                      <Button
+                        type='link'
+                        label={buttonText}
+                        iconRight={iconText}
+                        to={`/${url}/${row.id}`}
+                      />
                       )
                     : (
-                      <button
+                      <Button
+                        label={buttonText}
+                        iconRight={iconText}
                         onClick={() => onClick(row.id)}
-                        className='inline-flex items-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:bg-blue-800 font-medium rounded-lg text-sm px-3 py-2 text-center'
-                      >{iconText}<span className='ml-2 whitespace-nowrap'>{buttonText}</span>
-                      </button>
+                      />
                       )
                 }
               </td>
