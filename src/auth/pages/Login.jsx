@@ -66,6 +66,7 @@ export function LoginPage () {
                 {error && <small className='text-red-500 text-sm text-center'>{error}</small>}
               </div>
               <Button
+                full
                 type='submit'
                 disabled={loading}
                 label={loading ? <div className='w-full flex justify-center items-center'><Spinner /></div> : 'Sign in'}

@@ -154,7 +154,7 @@ export function CustomerPage () {
                         )
                       : (
                         <div className='flex justify-center items-center'>
-                          <p className='text-gray-400'>No bank account created, want to create a new bank account </p>
+                          <p className='text-gray-400'>There is no bank account associated with this customer</p>
                         </div>
                         )
                   }
