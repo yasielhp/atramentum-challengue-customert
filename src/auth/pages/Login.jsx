@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/Auth'
 import { authenticate } from '../../services/api'
-import { Spinner } from '../../components'
+import { Spinner, Input } from '../../components'
 import { Link } from 'react-router-dom'
 
 export function LoginPage () {
@@ -44,14 +44,24 @@ export function LoginPage () {
         <div className='w-96 bg-white rounded-lg shadow md:mt-0 xl:p-0'>
           <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
             <form className='space-y-4 md:space-y-6' onSubmit={handleOnSubmit}>
-              <div>
-                <label htmlFor='user' className='block mb-2 text-sm font-medium text-gray-900'>Your user</label>
-                <input disabled={loading} onChange={handleOnChange} type='text' name='user' id='user' className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg disabled:text-gray-300 disabled:bg-slate-100 focus:ring-blue-600 focus:border-blue-600 block w-full  h-12 p-2.5' placeholder='16-wgudovunn' required />
-              </div>
-              <div>
-                <label htmlFor='password' className='block mb-2 text-sm font-medium text-gray-900'>Your password</label>
-                <input disabled={loading} type='password' name='password' id='password' onChange={handleOnChange} className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg disabled:text-gray-300 disabled:bg-slate-100 focus:ring-blue-600 focus:border-blue-600 block w-full  h-12 p-2.5' placeholder='••••••••' required />
-              </div>
+              <Input
+                label='Your user'
+                name='user'
+                type='text'
+                placeholder='16-wgudovunn'
+                onChange={handleOnChange}
+                disabled={loading}
+                required
+              />
+              <Input
+                label='Your password'
+                name='password' type='password'
+                placeholder='••••••••'
+                onChange={handleOnChange}
+                disabled={loading}
+                required
+              />
+
               <div className='flex items-center justify-center'>
                 {error && <small className='text-red-500 text-sm text-center'>{error}</small>}
               </div>

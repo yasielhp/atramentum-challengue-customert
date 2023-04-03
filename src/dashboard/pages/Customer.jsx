@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { Layout } from '../layout'
-import { IconCustomer, IconEdit, Modal, Pagination, Spinner, Table } from '../../components'
+import { IconCustomer, IconEdit, Input, Modal, Pagination, Spinner, Table } from '../../components'
 
 import { getCustomer, getBankAcounts, getBankAccountId, updateBankAccountId } from '../../services/api'
 import { banksColumns, formatIBAN } from '../../utils'
@@ -83,16 +83,13 @@ export function CustomerPage () {
             onClose={() => setShowModal(false)}
             onConfirm={handleUpdateBank}
           >
-            <div>
-              <label className='block mb-2 text-sm font-medium text-gray-900' htmlFor='iban'>IBAN</label>
-              <input
-                id='iban'
-                value={formattedIban}
-                maxLength='34'
-                onChange={(e) => setFormattedIban(e.target.value)}
-                className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg disabled:text-gray-300 disabled:bg-slate-100 focus:ring-blue-600 focus:border-blue-600 block w-full  h-12 p-2.5'
-              />
-            </div>
+            <Input
+              label='Bank'
+              name='bank'
+              value={formattedIban}
+              onChange={(e) => setFormattedIban(e.target.value)}
+
+            />
           </Modal>
         )
       }

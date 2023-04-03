@@ -2,6 +2,7 @@ export * from './Spinner'
 export * from './Table'
 export * from './Pagination'
 export * from './Modal'
+export * from './Input'
 
 export * from './IconProfile'
 export * from './IconCustomers'
