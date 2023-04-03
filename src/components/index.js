@@ -4,7 +4,6 @@ export * from './Pagination'
 export * from './Modal'
 
 export * from './IconProfile'
-export * from './IconHome'
 export * from './IconCustomers'
 export * from './IconCustomer'
 export * from './IconSliderbarLeft'

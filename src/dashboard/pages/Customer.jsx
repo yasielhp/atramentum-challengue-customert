@@ -65,8 +65,6 @@ export function CustomerPage () {
       iban: formattedIban
     })
       .then(() => {
-        console.log('updated')
-        console.log(bank)
         fetchCustomerData()
         setShowModal(false)
       })
